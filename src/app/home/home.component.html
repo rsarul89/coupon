@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-sm-12">
-    <i class="fa pull-right" [ngClass]="{'fa-th-list':!toggle,'fa-th-large':toggle}" (click)="togle()" aria-hidden="true"></i>
+  <div class="col-sm-12 pr-0">
+    <i class="fa fa-2x pull-right" title="please click this icon to toggle" id="listToggle" [ngClass]="{'fa-th-list':!toggle,'fa-th-large':toggle}" (click)="togle()" aria-hidden="true"></i>
   </div>
 </div>
 <div class="row">
@@ -8,84 +8,80 @@
     <div style="height: 800px;padding: 5px 0px;">
       <p><strong>Search</strong></p>
       <p><input type="text" style="width:100%;" /></p>
-      <p><strong>Test</strong></p>
-      <div style="height: 200px;overflow-y: auto;">
-      <label class="checkcontainer">One
+      <p><i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter1' ,'fa-minus-square-o':current == 'filter1'}"  id="filter1Toggle" aria-hidden="true" (click)="current = 'filter1'"></i>&nbsp;<strong>Test1</strong></p>
+      <div [ngClass]="{'show':current == 'filter1' ,'hide':current != 'filter1'}" style="height: 200px;overflow-y: auto;" id="filter1">
+        <label class="checkcontainer">One
+          <input type="checkbox" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkcontainer">Two
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkcontainer">Three
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkcontainer">Four
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkcontainer">Five
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkcontainer">Six
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkcontainer">Seven
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <p><i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter2' ,'fa-minus-square-o':current == 'filter2'}"  id="filter2Toggle" aria-hidden="true" (click)="current = 'filter2'"></i>&nbsp;<strong>Test2</strong></p>
+      <div [ngClass]="{'show':current == 'filter2' ,'hide':current != 'filter2'}" style="height: 100px;overflow-y: auto;" id="filter2">
+        <label class="checkcontainer">One
         <input type="checkbox" checked="checked">
         <span class="checkmark"></span>
       </label>
-      <label class="checkcontainer">Two
+        <label class="checkcontainer">Two
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
-      <label class="checkcontainer">Three
+        <label class="checkcontainer">Three
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
-      <label class="checkcontainer">Four
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-       <label class="checkcontainer">Five
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-       <label class="checkcontainer">Six
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-       <label class="checkcontainer">Seven
+        <label class="checkcontainer">Four
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
       </div>
-      <!--<ul style="padding: 5px 10px;list-style: none;">
-        <li><input type="checkbox" name="vehicle1" value="Bike1"> I have a bike1</li>
-        <li><input type="checkbox" name="vehicle2" value="Bike2"> I have a bike2</li>
-        <li><input type="checkbox" name="vehicle3" value="Bike3"> I have a bike3</li>
-        <li><input type="checkbox" name="vehicle4" value="Bike4"> I have a bike4</li>
-        <li><input type="checkbox" name="vehicle5" value="Bike5"> I have a bike5</li>
-        <li><input type="checkbox" name="vehicle6" value="Bike6" checked> I have a bike6</li>
-      </ul>-->
-      <p><strong>Test</strong></p>
-      <label class="checkcontainer">One
+      <p><i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter3' ,'fa-minus-square-o':current == 'filter3'}" id="filter3Toggle" aria-hidden="true" (click)="current = 'filter3'"></i>&nbsp;<strong>Test3</strong></p>
+      <div [ngClass]="{'show':current == 'filter3' ,'hide':current != 'filter3'}" style="height: 100px;overflow-y: auto;" id="filter3">
+        <label class="checkcontainer">One
         <input type="checkbox" checked="checked">
         <span class="checkmark"></span>
       </label>
-      <label class="checkcontainer">Two
+        <label class="checkcontainer">Two
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
-      <label class="checkcontainer">Three
+        <label class="checkcontainer">Three
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
-      <label class="checkcontainer">Four
+        <label class="checkcontainer">Four
         <input type="checkbox">
         <span class="checkmark"></span>
       </label>
-      <p><strong>Test</strong></p>
-      <label class="checkcontainer">One
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-      <label class="checkcontainer">Two
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-      <label class="checkcontainer">Three
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
-      <label class="checkcontainer">Four
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
+      </div>
     </div>
   </div>
   <div class="col-md-9 col-sm-6">
     <div class="row">
-      <div *ngFor="let coupon of coupons; let i = index" class="col-md-4 col-sm-6" id="coupon-{{i + 1}}" [ngClass]="{'show':toggle,'hide':!toggle}">
+      <div *ngFor="let coupon of coupons; let i = index" class="col-md-4 col-sm-6 coupon-container pr-0" id="coupon-{{i + 1}}" [ngClass]="{'coupon-show':toggle,'coupon-hide':!toggle}">
         <div class="coupon">
           <div class="img-preview">
             <div class="heart"><a href="#"><i class="fa fa-star-o"></i></a></div><img src="./assets/stores/{{coupon.storeImage}}" alt="">
@@ -110,7 +106,7 @@
           </div>
         </div>
       </div>
-      <div *ngFor="let coupon of coupons; let i = index" class="col-md-12 col-sm-12" id="coupon-{{i + 1}}" [ngClass]="{'show':!toggle,'hide':toggle}">
+      <div *ngFor="let coupon of coupons; let i = index" class="col-md-12 col-sm-12 coupon-container pr-0" id="coupon-{{i + 1}}" [ngClass]="{'coupon-show':!toggle,'coupon-hide':toggle}">
         <div class="coupon">
           <div class="img-preview">
             <div class="heart"><a href="#"><i class="fa fa-star-o"></i></a></div><img src="./assets/stores/{{coupon.storeImage}}" alt="">

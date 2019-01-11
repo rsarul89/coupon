@@ -7,13 +7,45 @@ a, a:focus {
     outline: none;
     transition: all 0.15s ease;
 }
+body{
+    background-color: #e6e5e5;
+}
+@media (min-width: 1200px)
+{
+    .container {
+        width: 1300px;
+    }
+    .pr-0{
+        padding-right: 0px;
+    }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 img {
     max-width: 100%;
 }
 .navbar-custom{
     background-color: #253f58;
     border-color: #253f58;
-    box-shadow: 1px 2px 10px rgba(125, 119, 119, 0.12);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     min-height: 60px;
 }
 .navbar-custom .nav>li>a{
@@ -39,12 +71,24 @@ img {
     font-weight: 700;
     margin: 0 15px 60px 15px;
 }
+.coupon-show{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+.coupon-hide{
+   visibility: hidden;
+   opacity: 0;
+   height: 0;
+   transition: visibility .0s .5s, opacity .5s linear;
+}
 .coupon {
     position: relative;
     background-color: #f8f9f9;
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.12);
-    margin: 15px 0;
+    margin: 5px 0;
     transition: all .85s ease;
+    border-radius: 5px;
 }
 .coupon:hover{
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.52);
@@ -131,6 +175,13 @@ img {
 }
 .coupon-sidebar{
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.12);
-    margin: 15px 0;
+    margin: 5px 0;
     transition: all .85s ease;
+    background-color: #fff;
+}
+.coupon-sidebar ::-webkit-scrollbar {
+  width: 5px;
+}
+#listToggle{
+    cursor: pointer;
 }

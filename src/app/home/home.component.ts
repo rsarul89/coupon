@@ -8,8 +8,9 @@ import { Coupon } from '../models/coupon'
 })
 export class HomeComponent implements OnInit {
   coupons: Coupon[] = [];
-  coupon: Coupon = { title:'' , textPreview : ''};
+  coupon: Coupon = { title: '', textPreview: '' };
   toggle: boolean = true;
+  current: string = 'filter1';
   display = 'none';
   constructor() { }
   getStarCount(cpn: Coupon): number {
