@@ -130,5 +130,6 @@ export class HomeComponent implements OnInit {
         rating: [false, false, false, false, false]
       }
     ];
+    
   }
 }

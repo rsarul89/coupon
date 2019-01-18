@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-sm-12 pr-0">
-    <i class="fa fa-2x pull-right" title="please click this icon to toggle" id="listToggle" [ngClass]="{'fa-th-list':!toggle,'fa-th-large':toggle}" (click)="togle()" aria-hidden="true"></i>
+    <i class="fa fa-2x pull-right" title="please click this icon to toggle" id="listToggle" [ngClass]="{'fa-th-list':!toggle,'fa-th-large':toggle}"
+      (click)="togle()" aria-hidden="true"></i>
   </div>
 </div>
 <div class="row">
@@ -8,7 +9,9 @@
     <div style="height: 800px;padding: 5px 0px;">
       <p><strong>Search</strong></p>
       <p><input type="text" style="width:100%;" /></p>
-      <p><i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter1' ,'fa-minus-square-o':current == 'filter1'}"  id="filter1Toggle" aria-hidden="true" (click)="current = 'filter1'"></i>&nbsp;<strong>Test1</strong></p>
+      <p>
+        <i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter1' ,'fa-minus-square-o':current == 'filter1'}" id="filter1Toggle"
+          aria-hidden="true" (click)="current = 'filter1'"></i>&nbsp;<strong>Test1</strong></p>
       <div [ngClass]="{'show':current == 'filter1' ,'hide':current != 'filter1'}" style="height: 200px;overflow-y: auto;" id="filter1">
         <label class="checkcontainer">One
           <input type="checkbox" checked="checked">
@@ -39,7 +42,9 @@
           <span class="checkmark"></span>
         </label>
       </div>
-      <p><i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter2' ,'fa-minus-square-o':current == 'filter2'}"  id="filter2Toggle" aria-hidden="true" (click)="current = 'filter2'"></i>&nbsp;<strong>Test2</strong></p>
+      <p>
+        <i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter2' ,'fa-minus-square-o':current == 'filter2'}" id="filter2Toggle"
+          aria-hidden="true" (click)="current = 'filter2'"></i>&nbsp;<strong>Test2</strong></p>
       <div [ngClass]="{'show':current == 'filter2' ,'hide':current != 'filter2'}" style="height: 100px;overflow-y: auto;" id="filter2">
         <label class="checkcontainer">One
         <input type="checkbox" checked="checked">
@@ -58,7 +63,9 @@
         <span class="checkmark"></span>
       </label>
       </div>
-      <p><i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter3' ,'fa-minus-square-o':current == 'filter3'}" id="filter3Toggle" aria-hidden="true" (click)="current = 'filter3'"></i>&nbsp;<strong>Test3</strong></p>
+      <p>
+        <i class="fa" [ngClass]="{'fa-plus-square-o':current != 'filter3' ,'fa-minus-square-o':current == 'filter3'}" id="filter3Toggle"
+          aria-hidden="true" (click)="current = 'filter3'"></i>&nbsp;<strong>Test3</strong></p>
       <div [ngClass]="{'show':current == 'filter3' ,'hide':current != 'filter3'}" style="height: 100px;overflow-y: auto;" id="filter3">
         <label class="checkcontainer">One
         <input type="checkbox" checked="checked">
@@ -81,7 +88,8 @@
   </div>
   <div class="col-md-10 col-sm-6">
     <div class="row">
-      <div *ngFor="let coupon of coupons; let i = index" class="col-md-3 col-sm-6 coupon-container pr-0" id="coupon-{{i + 1}}" [ngClass]="{'coupon-show':toggle,'coupon-hide':!toggle}">
+      <div *ngFor="let coupon of coupons; let i = index" class="col-md-3 col-sm-6 coupon-container pr-0" id="coupon-{{i + 1}}"
+        [ngClass]="{'coupon-show':toggle,'coupon-hide':!toggle}">
         <div class="coupon">
           <div class="img-preview">
             <div class="heart"><a href="#"><i class="fa fa-star-o"></i></a></div><img src="./assets/stores/{{coupon.storeImage}}" alt="">
@@ -105,8 +113,8 @@
           <div class="date"><span class="expires">{{coupon.expires}}</span>
           </div>
         </div>
-      </div>
-      <div *ngFor="let coupon of coupons; let i = index" class="col-md-12 col-sm-12 coupon-container pr-0" id="coupon-{{i + 1}}" [ngClass]="{'coupon-show':!toggle,'coupon-hide':toggle}">
+    </div>
+    <!--<div *ngFor="let coupon of coupons; let i = index" class="col-md-12 col-sm-12 coupon-container pr-0" id="coupon-{{i + 1}}" [ngClass]="{'coupon-show':!toggle,'coupon-hide':toggle}">
         <div class="coupon">
           <div class="img-preview">
             <div class="heart"><a href="#"><i class="fa fa-star-o"></i></a></div><img src="./assets/stores/{{coupon.storeImage}}" alt="">
@@ -130,9 +138,233 @@
           <div class="date"><span class="expires">{{coupon.expires}}</span>
           </div>
         </div>
+      </div>-->
+    <div class="col-md-12" [ngClass]="{'coupon-show':!toggle,'coupon-hide':toggle}">
+      <h2 class="section-heading">Latest Coupon Codes and Deals</h2>
+      <div class="coupons-list">
+        <div class="store-offer-item shadow-box">
+          <div class="store-thumb-link">
+            <div class="offer-image">
+              <a href=""><img src="http://www.dealsdiscount4u.com/uploads/small/stores/Charlotte-Russe.jpg" alt="My Freedom Smoke" title="My Freedom Smoke"></a>
+            </div>
+            <div class="store-name">
+              <a href=""><span>My Freedom Smokes</span>  <i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="latest-coupon">
+            <h3 class="coupon-title"><a href="#">Up To 40% - 70% Off January Savings Event</a></h3>
+            <div class="coupon-des">
+              Save with free shipping and free returns on all orders of $99. <span class="des-more">... <a href="#">More <i class="glyphicon glyphicon-menu-down"></i></a></span>
+              <div class="coupon-des-full" style="display: none;">Some exclusions apply. No code required. Limited time offer.<a class="des-less" href="#">Less<i class="glyphicon glyphicon-menu-up"></i></a></div>
+            </div>
+          </div>
+          <div class="coupon-detail coupon-button-type">
+            <a href="#" class="coupon-button coupon-code" data-aff-url="https://google.com">
+              <span class="code-text">CALENDARS</span>
+              <span class="get-code">Get Code</span>
+            </a>
+            <div class="exp-text">Expires 6/25/2016 <a title="Save This Coupon" href="#" class="coupon-save"><i class="glyphicon glyphicon-star"></i></a></div>
+          </div>
+
+        </div>
+        <!--       second coupon -->
+        <div class="store-offer-item shadow-box">
+          <div class="store-thumb-link">
+            <div class="offer-image">
+              <a href="">
+                <span class="offer-text">75% OFF</span></a>
+            </div>
+            <div class="store-name">
+              <a href=""><span>Kmart Coupons</span> <i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="latest-coupon">
+            <h3 class="coupon-title"><a href="#">Up To 40% - 70% Off January Savings Event</a></h3>
+            <div class="coupon-des">
+              Save with free shipping and free returns on all orders of $99. <span id="des-more12" class="des-more">... <a role="button" data-toggle="collapse" href="#seemore12" aria-expanded="false" aria-controls="seemore12">More <i class="glyphicon glyphicon-menu-down"></i></a></span>
+              <div class="coupon-des-full collapse" id="seemore12">Some exclusions apply. No code required. Limited time offer.</div>
+            </div>
+          </div>
+          <div class="coupon-detail coupon-button-type">
+            <a href="#" class="coupon-button coupon-code" data-aff-url="https://google.com">
+              <span class="code-text">EMIAXHGF</span>
+              <span class="get-code">Get Code</span>
+            </a>
+            <div class="exp-text">Expires 6/25/2016 <a title="Save This Coupon" href="#" class="coupon-save"><i class="glyphicon glyphicon-star"></i></a></div>
+          </div>
+
+        </div>
+        <!--       third coupon active deal -->
+        <div class="store-offer-item shadow-box">
+          <div class="store-thumb-link">
+            <div class="offer-image">
+              <a href="">
+                <img src="http://www.dealsdiscount4u.com/uploads/small/stores/OpenSky.jpg"></a>
+            </div>
+            <div class="store-name">
+              <a href=""><span>Open Sky Coupons</span> <i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="latest-coupon">
+            <h3 class="coupon-title"><a href="#">Up To 40% - 70% Off January Savings Event</a></h3>
+            <div class="coupon-des">
+              Save with free shipping and free returns on all orders of $99. <span id="des-more12" class="des-more">... <a role="button" data-toggle="collapse" href="#seemore12" aria-expanded="false" aria-controls="seemore12">More <i class="glyphicon glyphicon-menu-down"></i></a></span>
+              <div class="coupon-des-full collapse" id="seemore12">Some exclusions apply. No code required. Limited time offer.</div>
+            </div>
+          </div>
+          <div class="coupon-detail coupon-button-type">
+            <a href="#" class="coupon-deal coupon-button" data-aff-url="https://google.com">Get Deal <i class="shop icon"></i></a>
+            <div class="exp-text">Expires 6/25/2016 <a title="Save This Coupon" href="#" class="coupon-save"><i class="glyphicon glyphicon-star"></i></a></div>
+          </div>
+
+        </div>
+        <!-- Store Page Coupon  -->
+        <div class="store-offer-item coupon-listing-item shadow-box">
+          <div class="store-thumb-link">
+            <div class="offer-image">
+              <a href="">
+                <img src="http://www.dealsdiscount4u.com/uploads/small/stores/OpenSky.jpg"></a>
+            </div>
+
+          </div>
+          <div class="latest-coupon">
+            <h3 class="coupon-title"><a href="#">Up To 80% Off Storewide Sale at OpenSky</a></h3>
+            <div class="c-type">
+              <span class="c-code c-sale">Sale</span> <span class="exp">Expires 6/25/2015</span>
+            </div>
+            <div class="coupon-des">
+              Save with free shipping and free returns on all orders of $99. <span id="des-more12" class="des-more">... <a role="button" data-toggle="collapse" href="#seemore12" aria-expanded="false" aria-controls="seemore12">More <i class="glyphicon glyphicon-menu-down"></i></a></span>
+              <div class="coupon-des-full collapse" id="seemore12">Some exclusions apply. No code required. Limited time offer.</div>
+            </div>
+          </div>
+          <div class="coupon-detail coupon-button-type">
+            <a href="#" class="coupon-deal coupon-button" data-aff-url="https://google.com">Get Deal <i class="shop icon"></i></a>
+            <div class="clear"></div>
+            <div class="user-ratting ui icon basic buttons">
+              <div class="ui button icon-popup visible" data-offset="0" data-position="bottom left" data-content="This worked" data-variation="inverted"><i class="glyphicon glyphicon-download"></i></div>
+
+              <div class="ui button icon-popup" data-offset="0" data-position="bottom left" data-content="It didn't work" data-variation="inverted"><i class="glyphicon glyphicon-upload"></i></div>
+              <div class="save-coupon ui button icon-popup" data-offset="0" data-position="bottom left" data-content="Save this coupon"
+                data-variation="inverted"><i class="glyphicon glyphicon-star"></i></div>
+          </div><span class="voted-value">100% Success</span>
+        </div>
+        <div class="clear"></div>
+        <div class="coupon-footer coupon-listing-footer">
+          <ul class="clearfix">
+            <li><span><i class="glyphicon glyphicon-signal"></i> 267 Used - 16 Today</span></li>
+            <li><a title="Share it with your friend" data-reveal="reveal-share" href="#" class=""><i class="glyphicon glyphicon-share-alt"></i> Share</a></li>
+            <li><a title="Send this coupon to an email" data-reveal="reveal-email" href="#"><i class="glyphicon glyphicon-envelope"></i> Email</a></li>
+            <li><a title="Coupon Comments" data-reveal="reveal-comments" href="#"><i class="glyphicon glyphicon-comment"></i> Comments</a></li>
+          </ul>
+          <div class="reveal-content reveal-share">
+            <span class="close"></span>
+            <h4>Share it with your friends</h4>
+            <div class="ui fluid left icon input">
+              <input value="http://example.com/stores/Nature/#c_28668" type="text">
+              <i class="linkify icon"></i>
+            </div>
+            <br>
+            <div class="coupon-share">
+              <a class="tiny ui facebook button"><i class="facebook icon"></i>Facebook</a>
+              <a class="tiny ui twitter button"><i class="twitter icon"></i>Twitter</a>
+              <a class="tiny ui google plus button"><i class="google plus icon"></i>Google Plus</a>
+              <a class="tiny ui instagram button"><i class="instagram icon"></i>Instagram</a>
+            </div>
+          </div>
+          <div class="reveal-content reveal-email">
+            <span class="close"></span>
+            <h4>Send this coupon to an email</h4>
+            <div class="ui fluid action left icon input">
+              <input placeholder="Email address ..." type="text">
+              <i class="mail outline icon"></i>
+              <div class="ui button btn btn_primary">Send</div>
+            </div><br>
+            <p>This is not a email subscription service. Your email (or your friend's email) will only be used to send this
+              coupon.</p>
+          </div>
+          <div class="reveal-content reveal-comments">
+            <span class="close"></span>
+            <h4>Showing most recent comments</h4>
+
+            <div class="ui threaded comments">
+              <div class="comment">
+                <a class="avatar">
+                  <img src="thumb/avatars/avatar1.jpg">
+                </a>
+                <div class="content">
+                  <a class="author">Elliot Fu</a>
+                  <div class="metadata">
+                    <span class="date">Yesterday at 12:30AM</span>
+                  </div>
+                  <div class="text">
+                    <p>Gave me 15% on my already sale priced item</p>
+                  </div>
+                  <div class="actions">
+                    <a class="reply">Reply</a>
+                  </div>
+                </div>
+                <div class="comments">
+                  <div class="comment">
+                    <a class="avatar">
+                      <img src="thumb/avatars/avatar2.jpg">
+                    </a>
+                    <div class="content">
+                      <a class="author">Jenny Hess</a>
+                      <div class="metadata">
+                        <span class="date">Just now</span>
+                      </div>
+                      <div class="text">
+                        <p>That item was excluded from offer. </p>
+                      </div>
+                      <div class="actions">
+                        <a class="reply">Reply</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment">
+                <a class="avatar">
+                  <img src="thumb/avatars/avatar3.jpg">
+                </a>
+                <div class="content">
+                  <a class="author">Joe Henderson</a>
+                  <div class="metadata">
+                    <span class="date">5 days ago</span>
+                  </div>
+                  <div class="text">
+                    <p>Total savings $21.44 on Women's active wear</p>
+                  </div>
+                  <div class="actions"><a class="reply">Reply</a></div>
+                </div>
+              </div>
+            </div>
+            <h4>Let other know how much you saved</h4>
+            <form action="">
+              <div class="ui form">
+                <div class="field">
+                  <textarea placeholder="Add a comment"></textarea>
+                </div>
+                <div class="two fields">
+                  <div class="field">
+                    <input type="text" placeholder="Your Name">
+                  </div>
+                  <div class="field">
+                    <input type="text" placeholder="Your Email">
+                  </div>
+                </div>
+                <button class="ui button btn btn_primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 
 <div class="backdrop" [ngStyle]="{'display':display}"></div>
