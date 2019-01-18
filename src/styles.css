@@ -13,7 +13,7 @@ body{
 @media (min-width: 1200px)
 {
     .container {
-        width: 1300px;
+        width: 1600px;
     }
     .pr-0{
         padding-right: 0px;
@@ -57,6 +57,16 @@ img {
 }
 .navbar-custom .nav>li>a, .navbar-custom .navbar-brand, .footer *{
     color: #fff;
+}
+.navbar-custom  .navbar-toggle{
+    padding: 10px 10px;
+    margin-top: 9px;
+    background-color: inherit;
+    border: 1px solid #fff;
+}
+.navbar-custom .navbar-toggle .icon-bar{
+    background-color: #fff;
+    height: 3px;
 }
 .footer{
     border-radius: 0;

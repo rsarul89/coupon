@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-3 col-sm-6 coupon-sidebar">
+  <div class="col-md-2 col-sm-6 coupon-sidebar">
     <div style="height: 800px;padding: 5px 0px;">
       <p><strong>Search</strong></p>
       <p><input type="text" style="width:100%;" /></p>
@@ -79,9 +79,9 @@
       </div>
     </div>
   </div>
-  <div class="col-md-9 col-sm-6">
+  <div class="col-md-10 col-sm-6">
     <div class="row">
-      <div *ngFor="let coupon of coupons; let i = index" class="col-md-4 col-sm-6 coupon-container pr-0" id="coupon-{{i + 1}}" [ngClass]="{'coupon-show':toggle,'coupon-hide':!toggle}">
+      <div *ngFor="let coupon of coupons; let i = index" class="col-md-3 col-sm-6 coupon-container pr-0" id="coupon-{{i + 1}}" [ngClass]="{'coupon-show':toggle,'coupon-hide':!toggle}">
         <div class="coupon">
           <div class="img-preview">
             <div class="heart"><a href="#"><i class="fa fa-star-o"></i></a></div><img src="./assets/stores/{{coupon.storeImage}}" alt="">
